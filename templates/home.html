@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+
+{% for product in object_list %}
+<div class="container py-5">
+<div class="card bg-dark">  
+        <div class="card-body text-center text-white">  
+            <a href="{% url 'product-detail' product.id %}"><h5 class="text-center">{{product.name}}</h5></a>  
+            <p class="card-text">{{product.price}}</p> 
+            <p class="card-text">some quick details about the product</p> 
+        </div>  
+</div>
+</div>  
+{% endfor %}
 {% endblock content %}
     
